@@ -1,0 +1,83 @@
+﻿@model IEnumerable<Zero_Hunger.EF.Employee>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<style>
+    .header a.admin {
+        background-color: dodgerblue;
+        color: white;
+    }
+
+    .plus-icon:after {
+        content: "\f067";
+        font-family: 'FontAwesome';
+        padding-left: 5px;
+    }
+</style>
+<link href="~/Content/table.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/admin_login.css" rel="stylesheet" type="text/css" />
+
+<br />
+<br />
+<b><span class="alert-warning"> @TempData["error"] </span></b>
+<table class="styled-table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DOB)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Location)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Password)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Location)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Username)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditEmployee", new { id = item.Id }) |
+                @Html.ActionLink("Details", "EmployeeDetails", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "DeleteEmployee", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>

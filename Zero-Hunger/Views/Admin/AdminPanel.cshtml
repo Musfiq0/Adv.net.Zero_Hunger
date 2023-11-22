@@ -1,0 +1,57 @@
+﻿@{
+    ViewBag.Title = "AdminPanel";
+}
+<style>
+    .header a.admin {
+        background-color: dodgerblue;
+        color: white;
+    }
+</style>
+<link href="~/Content/admin_login.css" rel="stylesheet" type="text/css" />
+<link href="~/Content/admin_panel.css" rel="stylesheet" type="text/css" />
+<b><span class="alert-warning"> @TempData["error"] </span></b>
+<body>
+
+
+    <table width="100%" table-layout: fixed>
+        <tr>
+            <td>
+                <div class="container">
+                    <h2>Employee Management</h2>
+                    <a href="./EmployeeManage">Employee List</a>                 
+                    <a href="./EmployeeManage">Edit Employee Account</a>
+                    <a href="./EmployeeManage">Delete Employee Account</a>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <h2>Food Management</h2>
+                    <a href="../FoodManage/OnlyCollect">Assign Employee To Collect Foods</a>
+                    <a href="../FoodManage/OnlyDistribute">Assign Employee To Distribute Foods</a>
+                    <a href="../FoodManage/Index">All Donated Food Location List</a>
+                    <a href="../FoodManage/Track">Track of Food Collection And Distribution</a>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="container">
+                    <h2>Location Management</h2>
+                    <a href="../Location/Index">Location List</a>
+                    <a href="../Location/Create">Create New Location</a>
+                    <a href="../Location/Edit">Edit Location</a>
+                    <a href="../Location/Index">Delete Existing Location</a>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <h2>Distribution Status</h2>
+                    <a href="../FoodManage/OnlyDistribute">Need To Be Distributed</a>
+                    <a href="../FoodManage/Processed">Distributed</a>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+</body>
+

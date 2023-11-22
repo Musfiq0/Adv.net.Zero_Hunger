@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+<style>
+    .header a.Login {
+        background-color: dodgerblue;
+        color: white;
+    }
+</style>
+
+<style>
+    .header a.Login {
+        background-color: dodgerblue;
+        color: white;
+    }
+</style>
+<style>
+    fieldset {
+        border: 3px solid;
+        width: 500px;
+        margin: auto;
+        background-color: #eeeeee;
+    }
+
+    legend {
+        background-color: gray;
+        color: white;
+        padding: 5px 10px;
+    }
+
+    input {
+        margin: 5px;
+    }
+</style>
+<link href="~/Content/admin_login.css" rel="stylesheet" type="text/css" />
+<fieldset>
+    <legend> <b>Donar Login</b> </legend>
+    <br>
+    <form action="" method="POST">
+        <br>
+        <label>Username: </label>
+        <input type="text" placeholder="Enter username" name="username">
+
+
+        <label>Password: </label>
+        <input type="password" placeholder="Enter Password" name="Password">
+
+
+        <input type="checkbox" name="remember">
+        <label for="remember">  Remember me</label><br>
+
+        <br>
+        <input id="sub2" type="reset" name="reset" value="Reset">
+        <input id="sub1" type="submit" name="Login" value="Login">
+    </form>
+    <span class="alert-warning" style="color:orangered"><b>@TempData["error"]</b></span>
+    <br><br>
+
+</fieldset>
+<br />
+

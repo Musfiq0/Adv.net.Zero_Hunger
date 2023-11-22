@@ -1,0 +1,74 @@
+﻿<style>
+
+    .header {
+        overflow: hidden;
+        background-color: #000000;
+        padding: 20px 10px;
+    }
+
+        .header a {
+            float: left;
+            color: brown;
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            line-height: 15px;
+            border-radius: 4px;
+        }
+
+            .header a.logo {
+                font-size: 25px;
+                font-weight: bold;
+                color: #7071E8;
+            }
+
+            .header a:hover {
+                background-color: gray;
+                color: white;
+            }
+
+            .header a.active {
+                background-color: dodgerblue;
+                color: black;
+            }
+
+    .header-right {
+        float: right;
+    }
+
+    .header-left {
+        float: left;
+    }
+
+    div.header {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        border: 2px;
+    }
+</style>
+<body>
+    <div class="header">
+        <a href="../zeroH/Home" class="logo"><b>Zero Hunger</b></a>
+        <div class="header-left">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a href="../Admin/AdminPanel">Profile - @User.Identity.Name</a>
+            }
+            <a class="Home" href="../zeroH/Home">Home</a>
+            <a class="Login" href="../Admin/Login">Admin Login</a>
+            <a class="LoginE" href="../Employee/Login">Employee Login</a>
+            <a class="LoginD" href="../zeroH/Login">Donar Login</a>
+            <a class="RegisterE" href="../Employee/Register">Employee Register</a>
+            <a class="RegisterD" href="../zeroH/Register">Donar Register</a>
+            <a class="Donate" href="../Donate/CollectionRequest">Donate</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a class="Donate" href="../Employee/Logout">Logout</a>
+
+            }
+        </div>
+    </div>
+
+</body>
